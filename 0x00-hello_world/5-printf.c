@@ -1,21 +1,17 @@
-
-
 #include <stdio.h>
 
 /**
+ * main - Prints the numbers since 0 to 9
  *
- *  * Description: main - Prints out a string to stdout.
- *
- *   * Return: 0 if success.
- *
- *    */
-
+ * Return: Always (Success)
+ */
 int main(void)
-
 {
-
-	printf("with proper grammar, but the outcome is a piece of art,\n");
-
-	return (0);
-
+char n;
+for (n= '0'; n <= '9'; n++)
+{
+putchar(n);
+}
+putchar('\n');
+return (0);
 }
