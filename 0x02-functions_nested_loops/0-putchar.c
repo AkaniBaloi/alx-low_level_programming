@@ -6,22 +6,13 @@
  */
 int main(void)
 {
-	_putchar('_');
+	char *sh = "0-putchar.c";
 
-	_putchar('p');
-
-	_putchar('u');
-
-	_putchar('t');
-
-	_putchar('c');
-
-	_putchar('h');
-
-	_putchar('a');
-
-	_putchar('r');
-
+	while (*sh)
+	{
+		_putchar(*sh);
+		sh++;
+	}
 	_putchar('\n');
 
 	return (0);
