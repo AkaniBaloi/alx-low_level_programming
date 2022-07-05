@@ -1,32 +1,36 @@
 #include <stdio.h>
-
 /**
- * main - Prints combination of numbers
- *
- */
+ * main - print numbers from 00 to 99.
+ (*
+  * Return: 0 on success
+  */
 int main(void)
 {
-	int c, i;
+	int i = '0';
+	int j = '0';
 
-	for (c = '0'; c <= '9'; c++)
+	while (i <= '9')
 	{
-		for (i = '0'; i <= '9'; i++)
+		while (j <= '9')
 		{
-			if (c < i)
-			{
-				putchar(c);
-				putchar(i);
-
-				if (c != '8' || (c == '8' && i != '9'))
-				{
+			if (!(i > j || i == j)
+					{
+					putchar(i);
+					putchar(j);
+					if (i == '8' && j == '9')
+					{
+					putchar('\n');
+					}
+					else
+					{
 					putchar(',');
 					putchar(' ');
-				}
-			}
-		}
-	}
-
-	putchar('\n');
-
-	return (0);
-}
+					}
+					}
+					j++;
+					}
+					j = '0';
+					i++;
+					}
+					return (0);
+					}

@@ -1,21 +1,18 @@
 #include <stdio.h>
-
 /**
- *
- * main - Prints the alphabet at reverse
- *
- * Return: Always (Success)
- */
+ * main - prints the alphabet in reverse.
+ (*
+  * Return: 0 on success
+  */
 int main(void)
 {
-	char c;
+	char c = 'z';
 
-	for (c = 'z'; c >= 'a'; c--)
+	while (c >= 'a')
 	{
 		putchar(c);
+		c--;
 	}
-
 	putchar('\n');
-
 	return (0);
 }
