@@ -1,17 +1,27 @@
 #include "main.h"
 
 /**
- * _isupper - define if a character is uppercase
+ * print_line - entry point
  *
- * Description: Prints the alphabet with _putchar
- * @c: charater
+ * Description: Prints lines
+ *@n: number of lines
  * Return: void
  */
 
-int _isupper(int c)
+void print_line(int n)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
+	int num_lines;
+
+	if (n <= 0)
+	{
+		_putchar('\n');
+	}
 	else
-		return (0);
+	{
+		for (num_lines = 1; num_lines <= n; num_lines++)
+		{
+			_putchar('_');
+		}
+		_putchar('\n');
+	}
 }
