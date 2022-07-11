@@ -1,19 +1,12 @@
 #include "holberton.h"
 /**
- * swap_int - swaps the value of two integers 
- * using two input parameters
- *
- * @a: input parameter 1
- * @b: input parameter 2
- *
- * return:Nothing
+ * swap_int - this functoin change the initial.
+ * @a: this is a parameter to change.
+ * @b: this is the another parameter to change.
  */
-
 void swap_int(int *a, int *b)
 {
-	int temp;
-
-	temp = *a;
+	int t = *a;
 	*a = *b;
-	*b = temp;
+	*b = t;
 }
