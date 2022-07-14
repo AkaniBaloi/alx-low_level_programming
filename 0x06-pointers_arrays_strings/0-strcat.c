@@ -8,7 +8,7 @@
  *
  * Return: A pointer to memory area s.
  */
-char *_memcpy(char *dest, char *src, unsigned int n)
+char *_strcat(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
 
