@@ -8,7 +8,7 @@
  *
  * Return: A pointer to memory area s.
  */
-char *_strcat(char *dest, char *src, unsigned int n)
+char *strcat(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
 
