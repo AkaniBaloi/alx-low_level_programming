@@ -2,39 +2,33 @@
 
 /**
  * cap_string - capitalizes all words of a string.
- * @s: string to use.
+ * @s: string to modify
  *
- * Return: string.
+ * Return: the resulting string
  */
 
 char *cap_string(char *s)
 {
-	int i = 1, j, check;
-	char a[] = {',', ';', '.', '!', '?', '"', '(', ')', '{', '}', '\n', '\t', ' '};
+	int i, j;
 
-	if (s[0] > 96 && s[0] < 123)
-		s[0] -= 32;
+	char spe[13] = {' ', '\t', '\n', ',', ';', '.',
+		'!', '?', '"', '(', ')', '{', '}'};
 
-	while (s[i] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-              if (s[i] > 96 && s[i] < 123)
-               {
-		j = 0;
-		check = 0;
-		while (check == 0 && j < 13)
-		{
-			if (s[i - 1] == a[j])
-			{
-				check = 1;
-			}
-			j++;
-		}
-		if (check == 1)
-		{
+		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
 			s[i] -= 32;
+		for (j = 0; j < 13; j++)
+		{
+			if (s[i] == spe[j])
+			{
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+				{
+					s[i + 1] -= 32;
+				}
+			}
 		}
 	}
-	i++;
-	}
+
 	return (s);
 }
