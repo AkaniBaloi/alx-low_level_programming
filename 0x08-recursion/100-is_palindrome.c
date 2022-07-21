@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * _strlen_recursion - return the lenght of a string.
+ * _strlen_recursion - return the length of a strive.
  * @s: string
- * Return: the length of a string.
+ * Return: the length of a strike
  */
 int _strlen_recursion(char *s)
 {
@@ -29,6 +29,7 @@ int comparator(char *s, int n1, int n2)
 	}
 	return (0);
 }
+
 /**
  * is_palindrome - checks if a string is a palindrome.
  * @s: string.
@@ -37,5 +38,6 @@ int comparator(char *s, int n1, int n2)
 int is_palindrome(char *s)
 {
 	if (*s == '\0')
-		return (comparator(s, 0, _strlen_recursion(s) - 1));
+		return (1);
+	return (comparator(s, 0, _strlen_recursion(s) - 1));
 }
