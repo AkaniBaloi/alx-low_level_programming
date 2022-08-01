@@ -2,50 +2,51 @@
 #include <stdlib.h>
 
 /**
- * copy - Copy a string.
- * @x: String address (destination).
- * @y: String address (source).
- * Return: String address.
+ * new_dog - creates a new dog.
+ * @name: name of the dog.
+ * @age: age of the dog.
+ * @owner: owner of the dog.
+ *
+ * Return: struct dog.
+ * if fails, returns NULL.
  */
-char *copy(char *x, char *y)
-{
-	int i;
-
-	for (i = 0; y[i] != '\0'; i++)
-		x[i] = y[i];
-	x[i] = '\0';
-	return (x);
-}
-/**
- * new_dog - Create a new dog.
- * @age: Float (dog age).
- * @owner: String address (dog owner).
- * Return: Address of new dog.
- **/
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *str;
+	dog_t *p_dog;
+	int i, lname, lowner;
 
-	str = malloc(sizeof(dog_t));
-	if (str == NULL)
-		return (NULL);
-
-	str->name = malloc(sizeof(name) + 1);
-	if (str->name == NULL)
+	p_dog = malloc(sizeof(*p_dog));
+	if (p_dog == NULL || !(name) || !(owner))
 	{
-		free(str);
+		free(p_dog);
 		return (NULL);
 	}
 
-	str->owner = malloc(sizeof(owner) + 1);
-	if (str->owner == NULL)
+	for (lname = 0; name[lname]; lname++)
+		;
+	for (lowner = 0; owner[lowner]; lowner++)
+		;
+
+	p_dog->name = malloc(lname + 1);
+	p_dog->owner = malloc(lowner + 1);
+
+	if (!(p_dog->name) || !(p_dog->owner))
 	{
-		free(str->name);
-		free(str);
+		free(p_dog->owner);
+		free(p_dog->name);
+		free(p_dog);
+		return (NULL);
 	}
-	str->age = age;
-	str->name = (copy(str->name, name));
-	str->owner = (copy(str->owner, owner));
-	return (str);
+
+	for (i = 0; i < lname; i++)
+		p_dog->name[i] = name[i];
+	p_dog->name[i] = '\0';
+
+	p_dog->age = age;
+
+	for (i = 0; i < lowner; i++)
+		p_dog->owner[i] = owner[i];
+	p_dog->owner[i] = '\0';
+
+	return (p_dog);
 }
